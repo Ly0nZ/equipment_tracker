@@ -15,11 +15,7 @@
 	<% for (item of items) {%>
 	<div class="item-box">
     	<p><span class="form-text">Item</span>: <%=item.name%></p>
-    	<p><span class="form-text">Description</span>: <%=item.description%></p>
-    	<p><span class="form-text">Department</span>: <%=item.department %></p>
-    	<p><span class="form-text">Date Added</span>: <%=item.createdAt %></p>
-    	<p><span class="form-text">ID</span>: <%=item._id %></p>
-    	<p>View 
+    	<a href="/equipment/<%=item._id %>"><p class="form-text">View</p></a>
     </div>
 	<% } %>
 </ul>

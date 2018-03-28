@@ -4,11 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="./static/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Show</title>
 </head>
 <body>
-<h1>Show All</h1>
-
+	<h2><%=item[0].name%></h2>
+	<ul>
+		<div class="view-box">
+	    	<p><span class="form-text">Description</span>: <%=item[0].description%></p>
+	    	<p><span class="form-text">Department</span>: <%=item[0].department %></p>
+	    	<p><span class="form-text">Date Added</span>: <%=item[0].createdAt %></p>
+	    	<p><span class="form-text">ID</span>: <%=item[0]._id %></p>
+	    </div>
+	</ul>
+	<a href="/"><button>Back</button></a>
+	<a href="/equipment/edit/<%=item[0]._id %>"><button>Edit Item</button></a>
 </body>
 </html>

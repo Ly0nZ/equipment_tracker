@@ -52,6 +52,42 @@ app.get('/equipment/new', function(req, res){
 	res.render('new');
 });
 
+app.get('/equipment/:id', function(req, res){
+	Item.find({_id: req.params.id}, function(err, items){
+		if(err){
+			console.log("Item could not be retrieved", err);
+			context = [];
+		}
+		else {
+			console.log("Item found!");
+		}
+		res.render('show', {item: items});
+	});
+});
+
+app.get('/equipment/edit/:id', function(req, res) {
+    Item.find({_id: req.params.id}, function(err, items){
+        if (err) {
+            console.log("Error when attemping to edit item.");
+        } else {
+        	console.log("Editing item.");
+        	context = {items: items};
+        }
+        res.render('edit', context);
+    });
+});
+
+app.post('/equipment/edit/:id', function(req, res) {
+    console.log(req.params.id);
+    Item.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, message){
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('/');
+        }
+    });    
+});
+
 app.post('/equipment', function(req, res){
 	console.log("Item form data received", req.body);
 	var item = new Item(req.body);
