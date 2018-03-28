@@ -1,0 +1,13 @@
+.item-box {
+	border: 2px solid black;
+	width: 450px;
+	height:200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+}
+
+.form-text {
+	text-decoration: underline;
+	font-weight: bold;
+}

@@ -21,7 +21,7 @@ mongoose.connect('mongodb://localhost/equipment_tracker');
 var ItemSchema = new mongoose.Schema({
 	name: {type: String, required: [true, "Item name is required."], minlength: [2, "Name must be at least two characters."]},
 	//originally quote_post
-	description: {type: String, required: [true, "Quote text is required."], minlength:[2, "Description is too short."]},
+	description: {type: String, required: [true, "Description is required."], minlength:[2, "Description is too short."]},
 	department: {type: String, required: true},
 	}, {timestamps: true});
 // Store the Schema under the name 'Quote'
@@ -52,7 +52,20 @@ app.get('/equipment/new', function(req, res){
 	res.render('new');
 });
 
-
+app.post('/equipment', function(req, res){
+	console.log("Item form data received", req.body);
+	var item = new Item(req.body);
+    item.save(function(err){
+        if(err){
+        	console.log("Error when submitting item.");
+            res.render('new', {errors: item.errors});
+        }
+        else {
+        	console.log("Success! New item added.");
+            res.redirect('/');
+        }
+    });
+});
 
 var server = app.listen(port, function() {
 	console.log(`listening on port ${port}`);

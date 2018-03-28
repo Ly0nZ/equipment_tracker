@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="./static/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Index</title>
 </head>
 <body>
@@ -14,10 +14,12 @@
 <ul>
 	<% for (item of items) {%>
 	<div class="item-box">
-    	<p>Item: <%=item.name%></p>
-    	<p>Description: <%=item.description%></p>
-    	<p>Department: <%=item.description %></p>
-    	<p>Date Added: <%=item.createdAt %></p>
+    	<p><span class="form-text">Item</span>: <%=item.name%></p>
+    	<p><span class="form-text">Description</span>: <%=item.description%></p>
+    	<p><span class="form-text">Department</span>: <%=item.department %></p>
+    	<p><span class="form-text">Date Added</span>: <%=item.createdAt %></p>
+    	<p><span class="form-text">ID</span>: <%=item._id %></p>
+    	<p>View 
     </div>
 	<% } %>
 </ul>
