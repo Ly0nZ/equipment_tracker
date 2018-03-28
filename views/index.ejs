@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="./static/style.css">
+	<title>Index</title>
+</head>
+<body>
+<h1>Equipment Tracker Index</h1>
+<a href="/equipment/new"><button>Add item</button></a>
+<p>All Items:</p>
+<ul>
+	<% for (item of items) {%>
+	<div class="item-box">
+    	<p>Item: <%=item.name%></p>
+    	<p>Description: <%=item.description%></p>
+    	<p>Department: <%=item.description %></p>
+    	<p>Date Added: <%=item.createdAt %></p>
+    </div>
+	<% } %>
+</ul>
+
+</body>
+</html>
