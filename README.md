@@ -1,5 +1,5 @@
 
-*Project utilizes 4 CRUD methods with Mongoose. Application tracks business assets (specifically hardware equipment).
+Project utilizes Create Retrieve Update Delete methods with Mongoose. Application tracks business assets (specifically hardware equipment).
 
 GET '/' Displays all of the equipment.
 GET '/equipment/:id' Displays information about one piece of equipment.
